@@ -13,9 +13,6 @@
                  [org.cassandraunit/cassandra-unit-shaded "2.1.9.2"]
                  ;due to cdnfe while loading buildTestMessenger
                  [org.apache.sshd/sshd-core "0.13.0"]
-                 [messaging/common "0.1" :exclusions [joda-time]]
-                 [messaging/common "0.1" :classifier "tests" :exclusions [joda-time]]
-                 [messaging/wahoo "0.1" :classifier "tests" :exclusions [joda-time]]
                  ;                 [cc.qbits/hayt "3.0.1"]
                  ;                 [im.chit/hara.reflect "2.2.17"]
                  [org.apache.ftpserver/ftpserver-core "1.0.6"]
@@ -27,7 +24,9 @@
                  [ch.qos.logback/logback-classic "1.1.3"]
                  [clj-logging-config "1.9.12"]
                  ;kafka
-                 [clj-kafka "0.3.4"]
+                 [clj-kafka "0.3.5-SNAPSHOT"]
+                 ;expectations used by clj-kafka
+                 [expectations "1.4.45"]
                  ;reflection-to determine method types to call on Scala
                  [im.chit/vinyasa "0.4.3"]
                  ;                 [com.taoensso/timbre "4.3.1"]
@@ -35,7 +34,7 @@
   :aot [ #".*"
          sparkling.serialization
          sparkling.destructuring
-         eyeota.msgutil
+;         eyeota.msgutil
          kafcas.cass
          ; sparkling.conf
          ; kafcas.core
